@@ -45,42 +45,257 @@
             </div>
           </div>
         </div>
-        <div class="tab-content tab-space">
-          <div class="tab-pane active text-center gallery" id="studio">
+        <div class="tab-content tab-space justify-content-center">
+          <div class="tab-pane active text-center gallery " id="studio">
             <div class="row">
-              <div class="col-md-3 ml-auto">
-                <img src="../assets/img/examples/studio-1.jpg" class="rounded">
-                <img src="../assets/img/examples/studio-2.jpg" class="rounded">
-              </div>
-              <div class="col-md-3 mr-auto">
-                <img src="../assets/img/examples/studio-5.jpg" class="rounded">
-                <img src="../assets/img/examples/studio-4.jpg" class="rounded">
+              <div class="col-md-6 ml-auto mr-auto">
+                <div class="card-container manual-flip">
+                  <div class="card">
+                    <div class="front">
+                      <div class="cover">
+                      </div>
+                      <div class="content">
+                        <div class="main">
+                          <h3 class="name">User</h3>
+                          <p class="profession">Details</p>
+          
+                          <p class="text-center"></p>
+                          <div class="stats-container">
+                            <div class="stats">
+                              <h4>235</h4>
+                              <p>
+                                Followers
+                              </p>
+                            </div>
+                            <div class="stats">
+                              <h4>114</h4>
+                              <p>
+                                Following
+                              </p>
+                            </div>
+                            <div class="stats">
+                              <h4>35</h4>
+                              <p>
+                                Projects
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="footer">
+                          <button class="btn btn-simple"  onclick="rotateCard(this)">
+                            <i class="fa fa-reply"></i> Back
+                        </button>
+                        </div>
+                      </div>
+                    </div> <!-- end front panel -->
+                    <div class="back">
+                      <div class="header">
+                        <h5 class="motto">"To be or not to be, this is my awesome motto!"</h5>
+                      </div>
+                      <div class="content">
+                        <div class="main">
+                          <!-- <div class="loginForm" [formGroup]="loginForm">
+                            <mat-form-field class="example-full-width">
+                              <mat-label>Email</mat-label>
+                              <input matInput type="email" formControlName="email">
+                              
+                              </mat-form-field>
+                            <mat-form-field class="example-full-width">
+                              <mat-label>Password</mat-label>
+                              <input matInput type="password" formControlName="password">
+                            
+                              </mat-form-field>
+                             </div> -->
+          
+                         
+                         
+                        </div>
+                      </div>
+                      <div class="footer justify-content-center">
+                        <button style="
+                        padding-left: 0px;
+                        margin-left: 226px;
+                    " class="btn btn-simple"  onclick="rotateCard(this)">
+                          <i class="fa fa-reply"></i> Back
+                      </button>
+                        <div class="social-links text-center">
+                          <a href="#" class="facebook"><i class="fa fa-facebook fa-fw"></i></a>
+                          <a href="#" class="google"><i class="fa fa-google-plus fa-fw"></i></a>
+                          <a href="#" class="twitter"><i class="fa fa-twitter fa-fw"></i></a>
+                        </div>
+                      </div>
+                    </div>  <!-- end back panel -->
+                  </div> <!-- end card -->
+                </div>
               </div>
             </div>
           </div>
           <div class="tab-pane text-center gallery" id="works">
             <div class="row">
-              <div class="col-md-3 ml-auto">
-                <img src="../assets/img/examples/olu-eletu.jpg" class="rounded">
-                <img src="../assets/img/examples/clem-onojeghuo.jpg" class="rounded">
-                <img src="../assets/img/examples/cynthia-del-rio.jpg" class="rounded">
-              </div>
-              <div class="col-md-3 mr-auto">
-                <img src="../assets/img/examples/mariya-georgieva.jpg" class="rounded">
-                <img src="../assets/img/examples/clem-onojegaw.jpg" class="rounded">
+              <div class="col-md-6 ml-auto mr-auto">
+                <div class="card-container manual-flip">
+                  <div class="card">
+                    <div class="front">
+                      <div class="cover">
+                      </div>
+                      <div class="content">
+                        <div class="main">
+                          <h3 class="name">User</h3>
+                          <p class="profession">Details</p>
+          
+                          <p class="text-center"></p>
+                          <div class="stats-container">
+                            <div class="stats">
+                              <h4>235</h4>
+                              <p>
+                                Followers
+                              </p>
+                            </div>
+                            <div class="stats">
+                              <h4>114</h4>
+                              <p>
+                                Following
+                              </p>
+                            </div>
+                            <div class="stats">
+                              <h4>35</h4>
+                              <p>
+                                Projects
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="footer">
+                          <button class="btn btn-simple"  onclick="rotateCard(this)">
+                            <i class="fa fa-reply"></i> Back
+                        </button>
+                        </div>
+                      </div>
+                    </div> <!-- end front panel -->
+                    <div class="back">
+                      <div class="header">
+                        <h5 class="motto">"To be or not to be, this is my awesome motto!"</h5>
+                      </div>
+                      <div class="content">
+                        <div class="main">
+                          <!-- <div class="loginForm" [formGroup]="loginForm">
+                            <mat-form-field class="example-full-width">
+                              <mat-label>Email</mat-label>
+                              <input matInput type="email" formControlName="email">
+                              
+                              </mat-form-field>
+                            <mat-form-field class="example-full-width">
+                              <mat-label>Password</mat-label>
+                              <input matInput type="password" formControlName="password">
+                            
+                              </mat-form-field>
+                             </div> -->
+          
+                         
+                         
+                        </div>
+                      </div>
+                      <div class="footer">
+                        <button style="
+                        padding-left: 0px;
+                        margin-left: 226px;
+                    " class="btn btn-simple"  onclick="rotateCard(this)">
+                          <i class="fa fa-reply"></i> Back
+                      </button>
+                        <div class="social-links text-center">
+                          <a href="#" class="facebook"><i class="fa fa-facebook fa-fw"></i></a>
+                          <a href="#" class="google"><i class="fa fa-google-plus fa-fw"></i></a>
+                          <a href="#" class="twitter"><i class="fa fa-twitter fa-fw"></i></a>
+                        </div>
+                      </div>
+                    </div>  <!-- end back panel -->
+                  </div> <!-- end card -->
+                </div>
               </div>
             </div>
           </div>
           <div class="tab-pane text-center gallery" id="favorite">
-            <div class="row">
-              <div class="col-md-3 ml-auto">
-                <img src="../assets/img/examples/mariya-georgieva.jpg" class="rounded">
-                <img src="../assets/img/examples/studio-3.jpg" class="rounded">
-              </div>
-              <div class="col-md-3 mr-auto">
-                <img src="../assets/img/examples/clem-onojeghuo.jpg" class="rounded">
-                <img src="../assets/img/examples/olu-eletu.jpg" class="rounded">
-                <img src="../assets/img/examples/studio-1.jpg" class="rounded">
+            <div class="row text-center">
+              <div class="col-md-6 ml-auto mr-auto">
+                <div class="card-container manual-flip">
+                  <div class="card">
+                    <div class="front">
+                      <div class="cover">
+                       
+                      </div>
+                      <div class="content">
+                        <div class="main">
+                          <h3 class="name">User</h3>
+                          <p class="profession">Details</p>
+          
+                          <p class="text-center"></p>
+                          <div class="stats-container">
+                            <div class="stats">
+                              <h4>235</h4>
+                              <p>
+                                Followers
+                              </p>
+                            </div>
+                            <div class="stats">
+                              <h4>114</h4>
+                              <p>
+                                Following
+                              </p>
+                            </div>
+                            <div class="stats">
+                              <h4>35</h4>
+                              <p>
+                                Projects
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="footer">
+                          <button class="btn btn-simple"  onclick="rotateCard(this)">
+                            <i class="fa fa-reply"></i> Back
+                        </button>
+                        </div>
+                      </div>
+                    </div> <!-- end front panel -->
+                    <div class="back">
+                      <div class="header">
+                        <h5 class="motto">"To be or not to be, this is my awesome motto!"</h5>
+                      </div>
+                      <div class="content">
+                        <div class="main">
+                          <!-- <div class="loginForm" [formGroup]="loginForm">
+                            <mat-form-field class="example-full-width">
+                              <mat-label>Email</mat-label>
+                              <input matInput type="email" formControlName="email">
+                              
+                              </mat-form-field>
+                            <mat-form-field class="example-full-width">
+                              <mat-label>Password</mat-label>
+                              <input matInput type="password" formControlName="password">
+                            
+                              </mat-form-field>
+                             </div> -->
+          
+                         
+                         
+                        </div>
+                      </div>
+                      <div class="footer flex-row-center">
+                        <button style="
+                        padding-left: 0px;
+                        margin-left: 226px;
+                    " class="btn btn-simple" onclick="rotateCard(this)">
+                          <i class="fa fa-reply"></i> Back
+                      </button>
+                        <div class="social-links text-center">
+                          <a href="#" class="facebook"><i class="fa fa-facebook fa-fw"></i></a>
+                          <a href="#" class="google"><i class="fa fa-google-plus fa-fw"></i></a>
+                          <a href="#" class="twitter"><i class="fa fa-twitter fa-fw"></i></a>
+                        </div>
+                      </div>
+                    </div>  <!-- end back panel -->
+                  </div> <!-- end card -->
+                </div>
               </div>
             </div>
           </div>

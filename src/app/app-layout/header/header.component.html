@@ -1,4 +1,5 @@
-<nav class="navbar navbar-transparent navbar-color-on-scroll fixed-top navbar-expand-lg" color-on-scroll="100" id="sectionsNav">
+<div class="conainer">
+  <nav class="navbar navbar-transparent navbar-color-on-scroll fixed-top navbar-expand-lg" color-on-scroll="100" id="sectionsNav">
     <div class="container">
       <div class="navbar-translate">
         <a class="navbar-brand" href="#">
@@ -23,14 +24,14 @@
               <i class="material-icons">work</i>Issues
             </a>
             <div class="dropdown-menu dropdown-with-icons">
-              <a routerLink="/register" class="dropdown-item">
+              <a routerLink="/user/raiseissue" class="dropdown-item">
                 <i class="material-icons">create_new_folder</i>Raise an Issue
               </a>
-              <a routerLink="/register"  class="dropdown-item">
-                <i class="material-icons">receipt_long</i> List
+              <a routerLink="/user/issuelist"  class="dropdown-item">
+                <i class="material-icons">receipt_long</i> Issue's List
               </a>
-              <a routerLink="/register" class="dropdown-item">
-                <i class="material-icons">update</i>Update
+              <a routerLink="/user/updateissue" class="dropdown-item">
+                <i class="material-icons">update</i>Update Issue
               </a>
               <a routerLink="/register"  class="dropdown-item">
                 <i class="material-icons">pageview</i> Detailed View
@@ -48,24 +49,16 @@
               <a routerLink="/forgot"  class="dropdown-item">
                 <i class="material-icons">vpn_key</i>Change Password
               </a>
+              <a routerLink="/forgot"  class="dropdown-item">
+                <i class="material-icons">exit_to_app</i>Log Out
+              </a>
             </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" rel="tooltip" title="" data-placement="bottom" href="#" target="_blank" data-original-title="Follow us on Twitter" rel="nofollow">
-              <i class="fa fa-twitter"></i>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" rel="tooltip" title="" data-placement="bottom" href="#" target="_blank" data-original-title="Like us on Facebook" rel="nofollow">
-              <i class="fa fa-facebook-square"></i>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" rel="tooltip" title="" data-placement="bottom" href="#" target="_blank" data-original-title="Follow us on Instagram" rel="nofollow">
-              <i class="fa fa-instagram"></i>
-            </a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
+</div>
+
+
+
