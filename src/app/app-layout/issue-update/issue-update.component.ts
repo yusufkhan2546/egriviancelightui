@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatAccordion } from '@angular/material/expansion';
 
 @Component({
   selector: 'app-issue-update',
@@ -6,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./issue-update.component.scss']
 })
 export class IssueUpdateComponent implements OnInit {
-
+  @ViewChild(MatAccordion) accordion: MatAccordion;
   constructor() { }
 
   ngOnInit(): void {

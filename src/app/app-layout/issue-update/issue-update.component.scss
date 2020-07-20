@@ -1,3 +1,46 @@
 .section{
     padding-top:0px;
 }
+a :hover {
+    color:red;
+}
+.modal-dialog, .modal-content,.modal-body,.modal-header,.modal-footer{
+   width: 614px;
+}
+@media screen and(max-width:375px){
+  .modal-dialog, .modal-content,.modal-body,.modal-header,.modal-footer{
+    width: 340px;
+ } 
+}
+.row .col-md-4 .stats h4,p{
+    text-align: center;
+}
+.second{
+    border-left:3px solid grey ;
+    border-right:3px solid grey ;
+}
+.example-action-buttons {
+    padding-bottom: 20px;
+  }
+  
+  .example-headers-align .mat-expansion-panel-header-title,
+  .example-headers-align .mat-expansion-panel-header-description {
+    flex-basis: 0;
+  }
+  
+  .example-headers-align .mat-expansion-panel-header-description {
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .example-headers-align .mat-form-field + .mat-form-field {
+    margin-left: 8px;
+  }
+  mat-accordion mat-expansion-panel {
+    background: rgb(112,112,110);
+    background: linear-gradient(164deg, rgba(112,112,110,0.9220063025210083) 12%, rgba(236,245,240,1) 86%);
+  }
+  .card-header{
+    background: rgb(122,5,180);
+    background: linear-gradient(180deg, rgba(122,5,180,1) 32%, rgba(232,238,231,1) 97%);
+  }

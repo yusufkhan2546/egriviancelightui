@@ -1,5 +1,6 @@
 <app-preloader></app-preloader>
-<nav class="navbar navbar-color-on-scroll navbar-transparent fixed-top navbar-expand-lg" color-on-scroll="100">
+<div class="login-page sidebar-collapse">
+  <nav class="navbar navbar-color-on-scroll navbar-transparent fixed-top navbar-expand-lg" color-on-scroll="100">
     <div class="container">
       <div class="navbar-translate">
         <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -39,7 +40,7 @@
   </div>
   <div class="main main-raised">
     <div class="container">
-        <div class="row">
+        <div class="row" [formGroup]="userForm">
             <div class="col-md-6">
                 <div class="input-group">
                     <div class="input-group-prepend">
@@ -47,31 +48,7 @@
                         <i class="material-icons">account_circle</i>
                       </span>
                     </div>
-                    <input type="email" class="form-control registrationInput" placeholder="First Name">
-                  </div>
-                 <div class="input-group">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text">
-                        <i class="material-icons">attach_email</i>
-                      </span>
-                    </div>
-                    <input type="email" class="form-control registrationInput" placeholder="Email...">
-                  </div>
-                  <div class="input-group">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text">
-                        <i class="material-icons">location_city</i>
-                      </span>
-                    </div>
-                    <input type="email" class="form-control registrationInput" placeholder="City">
-                  </div>
-                  <div class="input-group">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text">
-                        <i class="material-icons">contact_mail</i>
-                      </span>
-                    </div>
-                    <textarea type="text" class="form-control registrationInput" placeholder="Address..."></textarea>
+                    <input type="text" formControlName="firstName" class="form-control registrationInput" placeholder="First Name">
                   </div>
                   <div class="input-group">
                     <div class="input-group-prepend">
@@ -79,15 +56,46 @@
                         <i class="material-icons">people</i>
                       </span>
                     </div>
-                    <input type="email" class="form-control registrationInput" placeholder="Gender">
+                    <mat-radio-group aria-label="Select Gender" formControlName="gender">
+                      
+                      <mat-radio-button value="male" class="registrationInput">Male</mat-radio-button>
+                      <mat-radio-button value="female" class="registrationInput">Female</mat-radio-button>
+                      <mat-radio-button value="others" class="registrationInput">Others</mat-radio-button>
+                    </mat-radio-group>
                   </div>
+                
+                 <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">
+                        <i class="material-icons">attach_email</i>
+                      </span>
+                    </div>
+                    <input type="email"  formControlName="email" class="form-control registrationInput" placeholder="Email...">
+                  </div>
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">
+                        <i class="material-icons">location_city</i>
+                      </span>
+                    </div>
+                    <input type="text" formControlName="city" class="form-control registrationInput" placeholder="City">
+                  </div>
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">
+                        <i class="material-icons">contact_mail</i>
+                      </span>
+                    </div>
+                    <textarea type="text"formControlName="address" class="form-control registrationInput" placeholder="Address..."></textarea>
+                  </div>
+                
                   <div class="input-group">
                     <div class="input-group-prepend">
                       <span class="input-group-text">
                         <i class="material-icons">lock_outline</i>
                       </span>
                     </div>
-                    <input type="password" class="form-control registrationInput" placeholder="Password...">
+                    <input type="password"formControlName="password" class="form-control registrationInput" placeholder="Password...">
                   </div>
             </div>
             <div class="col-md-6">
@@ -97,7 +105,7 @@
                         <i class="material-icons">account_circle</i>
                       </span>
                     </div>
-                    <input type="email" class="form-control registrationInput" placeholder="Last Name">
+                    <input type="text"formControlName="lastName" class="form-control registrationInput" placeholder="Last Name">
                   </div>
                    <div class="input-group">
                     <div class="input-group-prepend">
@@ -105,7 +113,7 @@
                         <i class="material-icons">add_ic_call</i>
                       </span>
                     </div>
-                    <input type="email" class="form-control registrationInput" placeholder="Phone">
+                    <input type="text" formControlName="phone" class="form-control registrationInput" placeholder="Phone">
                   </div>
                   <div class="input-group">
                     <div class="input-group-prepend">
@@ -113,7 +121,7 @@
                         <i class="material-icons">location_city</i>
                       </span>
                     </div>
-                    <input type="email" class="form-control registrationInput" placeholder="State">
+                    <input type="text" formControlName="state" class="form-control registrationInput" placeholder="State">
                   </div>
                   <div class="input-group">
                     <div class="input-group-prepend">
@@ -121,7 +129,16 @@
                         <i class="material-icons">today</i>
                       </span>
                     </div>
-                    <input type="email" class="form-control registrationInput" placeholder="DoB">
+                    <mat-form-field class="example-full-width">
+                      <mat-label>Date Of Birth</mat-label>
+                      <input matInput [matDatepicker]="picker" formControlName="dob">
+                      <mat-datepicker-toggle matSuffix [for]="picker">
+                        <span class="input-group-text" matDatepickerToggleIcon>
+                          <i class="material-icons">cake</i>
+                        </span>
+                      </mat-datepicker-toggle>
+                      <mat-datepicker #picker></mat-datepicker>
+                    </mat-form-field>
                   </div>
                   <div class="input-group">
                     <div class="input-group-prepend">
@@ -129,7 +146,7 @@
                         <i class="material-icons">room</i>
                       </span>
                     </div>
-                    <input type="email" class="form-control registrationInput" placeholder="Pin Code">
+                    <input type="text" formControlName="pincode" class="form-control registrationInput" placeholder="Pin Code">
                   </div>
                   <div class="input-group">
                     <div class="input-group-prepend">
@@ -137,20 +154,20 @@
                         <i class="material-icons">vpn_key</i>
                       </span>
                     </div>
-                    <input type="password" class="form-control registrationInput" placeholder="Confirm Password...">
+                    <input type="password" formControlName="confirmpassword" class="form-control registrationInput" placeholder="Confirm Password...">
                   </div>
             </div>
         </div>
       <div class="row">
           <div class="col-md-12 ">
               <div class="buttons input-group flex-row-reverse registrationInput">
-                <button class="btn btn-success btn-round">
+                <button type="button" class="btn btn-success btn-round" (click)="submitUser()">
                     <i class="material-icons">login</i> Submit
                   </button>
-                  <button class="btn btn-info btn-round registrationInput">
+                  <button type="button" (click)="reset()" class="btn btn-info btn-round registrationInput">
                     <i class="material-icons">replay</i> Reset
                   </button>
-                  <button  class="btn btn-warning btn-round registrationInput">
+                  <button type="button" (click)="cancel()"class="btn btn-warning btn-round registrationInput">
                     <i class="material-icons">cancel</i> Cancel
                   </button>
               </div>
@@ -178,3 +195,5 @@
       </div>
     </div>
   </footer>
+</div>
+ 

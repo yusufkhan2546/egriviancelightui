@@ -15,6 +15,10 @@ import { DailogComponent } from './dailog/dailog.component';
 import { ToasterComponent } from './toaster/toaster.component';
 import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatExpansionModule} from '@angular/material/expansion';
+import {MatSelectModule} from '@angular/material/select';
+import {MatRadioModule} from '@angular/material/radio';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [LayoutComponent, DashboardComponent, UserComponent, HeaderComponent, MenuComponent, FooterComponent, IssueCreateComponent, IssueListComponent, IssueUpdateComponent, DailogComponent, ToasterComponent],
@@ -22,7 +26,12 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     CommonModule,
     AppLayoutRoutingModule,
     MatTableModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatExpansionModule,
+    MatSelectModule,
+    MatRadioModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class AppLayoutModule { }

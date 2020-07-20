@@ -12,8 +12,14 @@
     <div class="main main-raised">
       <div class="container">
         <h4 class="title">Issue updation</h4>
-        <div class="section ">
-          <button class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+        <div class="section text-center">
+          <a data-toggle="modal" data-target="#SelectModel" >
+            <h2 class="title"> Select to Update <span class="material-icons md-48">
+              plus_one
+              </span></h2>
+           </a>
+         
+          <!-- <button class="btn btn-primary" data-toggle="modal" data-target="#myModal">
             <i class="material-icons">library_books</i>
             Classic
           </button>
@@ -30,8 +36,8 @@
                 <i class="material-icons">cancel</i>Cancel
               </a>
         </div>
-        </div>
-        <div class="dropdown">
+          </div>
+           <div class="dropdown">
             <button class="btn btn-primary btn-sm  btn-round dropdown-toggle" data-toggle="dropdown">
                 <i class="material-icons">edit</i>
             </button>
@@ -43,7 +49,138 @@
             <i class="material-icons">cancel</i>Cancel
           </a>
         </div>
+         </div> -->
+        </div>
+        <div class="section">
+          <div class="card">
+            <div class="card-header text-center">
+                <h3> Update Issue </h3> 
+            </div>
+            <div class="card-body">
+             <div class="container">
+               <div class="row">
+                 <div class="col-md-12">
+                  <mat-accordion class="example-headers-align" multi>
+                    <mat-expansion-panel >
+                      <mat-expansion-panel-header>
+                        <mat-panel-title>
+                          Unique ID
+                        </mat-panel-title>
+                        <mat-panel-description>
+                          Type the country name
+                          <span class="input-group-text">
+                            <i class="material-icons">fingerprint</i>
+                          </span>
+                        </mat-panel-description>
+                      </mat-expansion-panel-header>
+                  <!---                    body               -->
+                    </mat-expansion-panel>
+                    <mat-expansion-panel>
+                      <mat-expansion-panel-header>
+                        <mat-panel-title>
+                          Basic Details
+                        </mat-panel-title>
+                        <mat-panel-description>
+                          Info
+                          <span class="input-group-text">
+                            <i class="material-icons">feedback</i>
+                          </span>
+                        </mat-panel-description>
+                      </mat-expansion-panel-header>
+                  
+           <!---                    body               -->
+                  
+                    </mat-expansion-panel>
+                   
+                  
+                    <mat-expansion-panel>
+                      <mat-expansion-panel-header>
+                        <mat-panel-title>
+                         About
+                        </mat-panel-title>
+                        <mat-panel-description>
+                          Detailed View
+                          <span class="input-group-text">
+                            <i class="material-icons">article</i>
+                          </span>
+                        </mat-panel-description>
+                      </mat-expansion-panel-header>
+              <!---                    body               -->
+                    </mat-expansion-panel>
+                  </mat-accordion>
+                 </div>
+                
+
+
+
+               </div>
+               <div class="row">
+                 <div class="col-md-4">
+                  <div class="stats">
+                    <h4>114</h4>
+                    <p>
+                      Status
+                    </p>
+                  </div>
+                 </div>
+                 <div class="col-md-4">
+                  <div class="stats second">
+                    <h4>114</h4>
+                    <p>
+                     Complexity
+                    </p>
+                  </div>
+                 </div>
+                 <div class="col-md-4">
+                  <div class="stats">
+                    <h4>114</h4>
+                    <p>
+                      Jonour
+                    </p>
+                  </div>
+                 </div>
+               </div>
+             </div>
+            </div>
+            <div class="card-footer flex-row-reverse">
+              
+              <mat-form-field >
+               
+                <mat-label> Update Status</mat-label>
+                <mat-select name="Status">
+                  <mat-option value=''>
+                       Select
+                  </mat-option>
+                  <mat-option value='Submit'>
+                    Submit
+               </mat-option>
+               <mat-option value='Active'>
+                 Active
+                </mat-option>
+                </mat-select>
+              </mat-form-field>
+              <span class="input-group-text">
+                <i class="material-icons">edit</i>
+              </span>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
+  <div class="modal fade" id="SelectModel" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Select Issue</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <i class="material-icons">clear</i>
+          </button>
+        </div>
+        <div class="modal-body">
+        <app-issue-list></app-issue-list>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger btn-link" data-dismiss="modal">Close</button>
         </div>
       </div>
     </div>

@@ -10,6 +10,12 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
 import { AppLayoutModule } from './app-layout/app-layout.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
+import {MatRadioModule} from '@angular/material/radio';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+
+import {MatInputModule} from '@angular/material/input';
+import { MatNativeDateModule } from '@angular/material/core';
 declare var $:any;
 @NgModule({
   declarations: [
@@ -23,8 +29,14 @@ declare var $:any;
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
     AppLayoutModule,
     ToastrModule.forRoot(),
+    MatRadioModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]
