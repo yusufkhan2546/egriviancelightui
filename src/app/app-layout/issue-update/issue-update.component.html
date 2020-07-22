@@ -1,79 +1,50 @@
+
 <div class="profile-page sidebar-collapse">
-    <div class="page-header header-filter" data-parallax="true" style="background-image: url('assets/img/bg3.jpg')">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-8 ml-auto mr-auto">
-            <div class="brand text-center">
-            </div>
+  <div class="page-header header-filter" data-parallax="true" style="background-image: url('assets/img/bg3.jpg')">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 ml-auto mr-auto">
+          <div class="brand text-center">
           </div>
         </div>
       </div>
     </div>
-    <div class="main main-raised">
-      <div class="container">
-        <h4 class="title">Issue updation</h4>
-        <div class="section text-center">
-          <a data-toggle="modal" data-target="#SelectModel" >
-            <h2 class="title"> Select to Update <span class="material-icons md-48">
+  </div>
+  <div class="main main-raised">
+    <div class="container">
+      <h4 class="title">Issue updation</h4>
+      <div class="section text-center" *ngIf="!currentIssue">
+        <a data-toggle="modal" data-target="#SelectModel">
+          <h2 class="title"> Select to Update <span class="material-icons md-48">
               plus_one
-              </span></h2>
-           </a>
-         
-          <!-- <button class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-            <i class="material-icons">library_books</i>
-            Classic
-          </button>
-          <div class="dropdown">
-                <button class="btn btn-primary btn-sm  btn-round dropdown-toggle" data-toggle="dropdown">
-                    <i class="material-icons">delete</i>
-                </button>
-         
-        <div class="dropdown-menu dropdown-with-icons">
-              <a routerLink="/user/profile" class="dropdown-item">
-                <i class="material-icons">check</i>Confirm
-              </a>
-              <a routerLink="/forgot"  class="dropdown-item">
-                <i class="material-icons">cancel</i>Cancel
-              </a>
-        </div>
+            </span></h2>
+        </a>
+
+      </div>
+      <div class="section" *ngIf="currentIssue">
+        <div class="card">
+          <div class="card-header text-center">
+            <h3> Update Issue </h3>
           </div>
-           <div class="dropdown">
-            <button class="btn btn-primary btn-sm  btn-round dropdown-toggle" data-toggle="dropdown">
-                <i class="material-icons">edit</i>
-            </button>
-        <div class="dropdown-menu dropdown-with-icons">
-          <a routerLink="/user/profile" class="dropdown-item">
-            <i class="material-icons">check</i>Confirm
-          </a>
-          <a routerLink="/forgot"  class="dropdown-item">
-            <i class="material-icons">cancel</i>Cancel
-          </a>
-        </div>
-         </div> -->
-        </div>
-        <div class="section">
-          <div class="card">
-            <div class="card-header text-center">
-                <h3> Update Issue </h3> 
-            </div>
-            <div class="card-body">
-             <div class="container">
-               <div class="row">
-                 <div class="col-md-12">
+          <div class="card-body">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-12">
                   <mat-accordion class="example-headers-align" multi>
-                    <mat-expansion-panel >
+                    <mat-expansion-panel disabled>
                       <mat-expansion-panel-header>
                         <mat-panel-title>
                           Unique ID
+
                         </mat-panel-title>
                         <mat-panel-description>
-                          Type the country name
+                          <b>{{currentIssue?._id?currentIssue?._id:"N/A"}}</b>
                           <span class="input-group-text">
                             <i class="material-icons">fingerprint</i>
                           </span>
                         </mat-panel-description>
                       </mat-expansion-panel-header>
-                  <!---                    body               -->
+
                     </mat-expansion-panel>
                     <mat-expansion-panel>
                       <mat-expansion-panel-header>
@@ -87,16 +58,41 @@
                           </span>
                         </mat-panel-description>
                       </mat-expansion-panel-header>
-                  
-           <!---                    body               -->
-                  
+                      <div class="container">
+                        <div class="row">
+                          <div class="col-md-6">
+                            <h4><b>Name:</b></h4>
+                          </div>
+                          <div class="col-md-6">
+                            <h4>{{currentIssue?.name}}</h4>
+                          </div>
+                          <div class="col-md-6">
+                            <h4><b>Gender:</b></h4>
+                          </div>
+                          <div class="col-md-6">
+                            <h4>{{currentIssue?.gender}}</h4>
+                          </div>
+                          <div class="col-md-6">
+                            <h4><b>Email:</b></h4>
+                          </div>
+                          <div class="col-md-6">
+                            <h4>{{currentIssue?.email}}</h4>
+                          </div>
+                           <div class="col-md-6">
+                            <h4><b>Phone:</b></h4>
+                          </div>
+                          <div class="col-md-6">
+                            <h4>{{currentIssue?.phone}}</h4>
+                          </div>
+                        </div>
+                      </div>
                     </mat-expansion-panel>
-                   
-                  
+
+
                     <mat-expansion-panel>
                       <mat-expansion-panel-header>
                         <mat-panel-title>
-                         About
+                          About
                         </mat-panel-title>
                         <mat-panel-description>
                           Detailed View
@@ -105,63 +101,107 @@
                           </span>
                         </mat-panel-description>
                       </mat-expansion-panel-header>
-              <!---                    body               -->
+                      <div class="container">
+                        <div class="row">
+                          <div class="col-md-6">
+                            <h4><b>Place:</b></h4>
+                          </div>
+                          <div class="col-md-6">
+                            <h4>{{currentIssue?.place}}</h4>
+                          </div>
+                          <div class="col-md-6">
+                            <h4><b>City:</b></h4>
+                          </div>
+                          <div class="col-md-6">
+                            <h4>{{currentIssue?.city}}</h4>
+                          </div>
+                          <div class="col-md-6">
+                            <h4><b>State:</b></h4>
+                          </div>
+                          <div class="col-md-6">
+                            <h4>{{currentIssue?.state}}</h4>
+                          </div>
+                           <div class="col-md-6">
+                            <h4><b>Pin Code:</b></h4>
+                          </div>
+                          <div class="col-md-6">
+                            <h4>{{currentIssue?.pincode}}</h4>
+                          </div>
+                          <div class="col-md-6">
+                            <h4><b>Address:</b></h4>
+                          </div>
+                          <div class="col-md-6">
+                            <mat-form-field class="example-full-width">
+                              <textarea disabled matInput >{{currentIssue?.address}}</textarea>
+                            </mat-form-field>
+                          </div>
+                          <div class="col-md-6">
+                            <h4><b>Issue:</b></h4>
+                          </div>
+                          <div class="col-md-6">
+                            <mat-form-field class="example-full-width">
+                              <textarea disabled matInput >{{currentIssue?.issue}}</textarea>
+                            </mat-form-field>
+                          </div>
+                        </div>
+                      </div>
                     </mat-expansion-panel>
                   </mat-accordion>
-                 </div>
-                
-
-
-
-               </div>
-               <div class="row">
-                 <div class="col-md-4">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-4">
                   <div class="stats">
-                    <h4>114</h4>
+                    <h4>{{currentIssue?._id?currentIssue?.status:"N/A"}}</h4>
                     <p>
                       Status
                     </p>
                   </div>
-                 </div>
-                 <div class="col-md-4">
+                </div>
+                <div class="col-md-4">
                   <div class="stats second">
-                    <h4>114</h4>
+                    <h4>{{currentIssue?._id?currentIssue?.complexity:"N/A"}}</h4>
                     <p>
-                     Complexity
+                      Complexity
                     </p>
                   </div>
-                 </div>
-                 <div class="col-md-4">
+                </div>
+                <div class="col-md-4">
                   <div class="stats">
-                    <h4>114</h4>
+                    <h4>{{currentIssue?._id?currentIssue?.issueJonour:"N/A"}}</h4>
                     <p>
                       Jonour
                     </p>
                   </div>
-                 </div>
-               </div>
-             </div>
+                </div>
+              </div>
             </div>
-            <div class="card-footer flex-row-reverse">
-              
-              <mat-form-field >
-               
-                <mat-label> Update Status</mat-label>
-                <mat-select name="Status">
-                  <mat-option value=''>
-                       Select
-                  </mat-option>
-                  <mat-option value='Submit'>
-                    Submit
-               </mat-option>
-               <mat-option value='Active'>
-                 Active
+          </div>
+          <div class="card-footer flex-row-reverse">
+
+            <mat-form-field>
+              <mat-label> Update Status</mat-label>
+              <mat-select name="Status" [formControl]="status" (selectionChange)="update()">
+                <mat-option value=''>
+                  Select
                 </mat-option>
-                </mat-select>
-              </mat-form-field>
-              <span class="input-group-text">
-                <i class="material-icons">edit</i>
-              </span>
+                <mat-option value='Submitted'>
+                  Submitted
+                </mat-option>
+                <mat-option value='Pending'>
+                  Pending
+                </mat-option>
+                <mat-option value='Active'>
+                  Active
+                </mat-option>
+                <mat-option value='Solved'>
+                  Solved
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+            <span class="input-group-text">
+              <i class="material-icons">edit</i>
+            </span>
           </div>
         </div>
       </div>
@@ -177,7 +217,7 @@
           </button>
         </div>
         <div class="modal-body">
-        <app-issue-list></app-issue-list>
+          <app-issue-list></app-issue-list>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-danger btn-link" data-dismiss="modal">Close</button>
@@ -185,4 +225,3 @@
       </div>
     </div>
   </div>
-  

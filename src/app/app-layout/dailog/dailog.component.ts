@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'app-dailog',
   templateUrl: './dailog.component.html',
@@ -10,6 +11,7 @@ export class DailogComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    
   }
 
 }

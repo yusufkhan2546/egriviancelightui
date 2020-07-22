@@ -17,6 +17,13 @@ import {MatInputModule} from '@angular/material/input';
 import { MatNativeDateModule } from '@angular/material/core';
 import { JwtInterceptor } from './helpers/jwt.interceptor';
 import { ErrorInterceptor } from './helpers/error.interceptor';
+import { environment } from '../environments/environment';
+import { NgxsModule } from '@ngxs/store';
+import { UserState } from './states/user.state';
+import { IssueState } from './states/issue.state';
+import {NgxSpinnersModule} from 'ngx-spinners';
+import { HeadermainComponent } from './headermain/headermain.component';
+import { FootermainComponent } from './footermain/footermain.component';
 declare var $:any;
 @NgModule({
   declarations: [
@@ -24,7 +31,9 @@ declare var $:any;
     PreloaderComponent,
     RegisterComponent,
     LoginComponent,
-    ForgotPasswordComponent
+    ForgotPasswordComponent,
+    HeadermainComponent,
+    FootermainComponent
   ],
   imports: [
    
@@ -36,10 +45,15 @@ declare var $:any;
     ReactiveFormsModule,
     AppLayoutModule,
     ToastrModule.forRoot(),
+    NgxsModule.forRoot([UserState,IssueState], {
+      developmentMode: !environment.production
+    }),
     MatRadioModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatInputModule
+    MatInputModule,
+    NgxSpinnersModule 
+    
   ],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
                { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },],

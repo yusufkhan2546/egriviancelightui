@@ -11,3 +11,16 @@ mat-paginator{
     background: rgb(242,239,233);
     background: linear-gradient(45deg, rgba(242,239,233,1) 21%, rgba(7,177,242,1) 83%);
 }
+.head .col-md-12{
+    display: flex!important;
+    flex-direction: row-reverse!important;
+}
+.options{
+    border-right: 10px;
+    border-left: 20px;
+    border-top: 20px;
+    padding:10px;
+    border-radius: 10%;
+    background: rgb(242,239,233);
+    background: linear-gradient(45deg, rgba(242,239,233,1) 21%, rgba(7,177,242,1) 83%);
+}

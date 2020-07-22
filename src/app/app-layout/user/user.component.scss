@@ -317,3 +317,13 @@ body {
         visibility: visible;
     }
 }
+.title{
+    margin-bottom:0px;
+}
+.basicEdit{
+display: flex!important;
+flex-direction: row-reverse!important;
+}
+.row{
+    cursor: pointer;
+}

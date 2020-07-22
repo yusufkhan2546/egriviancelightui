@@ -8,13 +8,15 @@ import { environment } from '../../environments/environment';
 import { Login } from '../models/login.model';
 import { Router } from '@angular/router';
 
+
 @Injectable({ providedIn: 'root' })
 export class AuthenticationService {
     private currentUserSubject: BehaviorSubject<User>;
     public currentUser: Observable<User>;
     apiUrl;
     constructor(private http: HttpClient,
-                 private router:Router) {
+                 private router:Router,
+                ) {
         this.currentUserSubject = new BehaviorSubject<User>(JSON.parse(localStorage.getItem('currentUser')));
         this.currentUser = this.currentUserSubject.asObservable();
         this.apiUrl = environment.apiUrl;

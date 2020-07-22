@@ -7,6 +7,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { first } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment';
+import { ProgressService } from '../services/progress.service';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -26,7 +28,9 @@ export class LoginComponent implements OnInit {
                 private auth:AuthenticationService,
                 private route: ActivatedRoute,
                 private router:Router,
-                private http:HttpClient
+                private http:HttpClient,
+                private progress:ProgressService,
+           
                ) { this.apiUrl = environment.apiUrl }
 
   ngOnInit(): void {
@@ -58,21 +62,26 @@ export class LoginComponent implements OnInit {
 
     // stop here if form is invalid
     if (this.loginForm.invalid) {
+      this.toastr.info('Please Enter Valid Credentials')
         return;
     }
-
+ this.progress.show();
     this.loading = true;
     this.auth.login(this.loginForm.value)
         .pipe(first())
         .subscribe(
             data => {
                 this.router.navigate([`/user`]);
-                this.toastr.success('Login Success')
-                this.toastr.success
+                this.progress.hide();
+                this.toastr.success('Login Success');
+              
+          
             },
             error => {
+              this.toastr.error('Invalid Creds');
                 this.error = error;
                 this.loading = false;
+                this.progress.hide();
             });
 }
 }

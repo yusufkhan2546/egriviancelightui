@@ -1,34 +1,35 @@
 <div class="profile-page sidebar-collapse">
-  <div class="page-header header-filter" data-parallax="true" style="background-image: url('../assets/img/city-profile.jpg');"></div>
+  <div class="page-header header-filter" data-parallax="true"
+    style="background-image: url('../assets/img/city-profile.jpg');"></div>
   <div class="main main-raised">
     <div class="profile-content">
       <div class="container">
-        <div class="row">
+        <div class="row" style="
+        height: 5px;
+               ">
           <div class="col-md-6 ml-auto mr-auto">
             <div class="profile">
               <div class="avatar">
-                <img src="../assets/img/faces/christian.jpg" alt="Circle Image" class="img-raised rounded-circle img-fluid">
-              </div>
-              <div class="name">
-                <h3 class="title">Christian Louboutin</h3>
-                <h6>Designer</h6>
-                <a href="#pablo" class="btn btn-just-icon btn-link btn-dribbble"><i class="fa fa-dribbble"></i></a>
-                <a href="#pablo" class="btn btn-just-icon btn-link btn-twitter"><i class="fa fa-twitter"></i></a>
-                <a href="#pablo" class="btn btn-just-icon btn-link btn-pinterest"><i class="fa fa-pinterest"></i></a>
+                <img src="../assets/img/user.jpg" alt="Circle Image" class="img-raised rounded-circle img-fluid">
               </div>
             </div>
           </div>
         </div>
-        <div class="description text-center">
-          <p>An artist of considerable range, Chet Faker &#x2014; the name taken by Melbourne-raised, Brooklyn-based Nick Murphy &#x2014; writes, performs and records all of his own music, giving it a warm, intimate feel with a solid groove structure. </p>
-        </div>
         <div class="row">
-          <div class="col-md-6 ml-auto mr-auto">
+          <div class="col-md-12 ml-auto mr-auto">
             <div class="profile-tabs">
               <ul class="nav nav-pills nav-pills-icons justify-content-center" role="tablist">
                 <li class="nav-item">
                   <a class="nav-link active" href="#studio" role="tab" data-toggle="tab">
-                    <i class="material-icons">camera</i> Studio
+                    <i class="material-icons">camera</i> Details
+                  </a>
+                </li>
+                <li class="nav-item text-center">
+                  <a class="nav-link " role="tab">
+                    <div class="name">
+                      <h3 class="title">{{currentUser?.firstName}}</h3>
+                      <h6>Admin</h6>
+                    </div>
                   </a>
                 </li>
                 <li class="nav-item">
@@ -36,271 +37,193 @@
                     <i class="material-icons">palette</i> Work
                   </a>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#favorite" role="tab" data-toggle="tab">
-                    <i class="material-icons">favorite</i> Favorite
-                  </a>
-                </li>
               </ul>
-            </div>
-          </div>
-        </div>
-        <div class="tab-content tab-space justify-content-center">
-          <div class="tab-pane active text-center gallery " id="studio">
-            <div class="row">
-              <div class="col-md-6 ml-auto mr-auto">
-                <div class="card-container manual-flip">
-                  <div class="card">
-                    <div class="front">
-                      <div class="cover">
-                      </div>
-                      <div class="content">
-                        <div class="main">
-                          <h3 class="name">User</h3>
-                          <p class="profession">Details</p>
-          
-                          <p class="text-center"></p>
-                          <div class="stats-container">
-                            <div class="stats">
-                              <h4>235</h4>
-                              <p>
-                                Followers
-                              </p>
-                            </div>
-                            <div class="stats">
-                              <h4>114</h4>
-                              <p>
-                                Following
-                              </p>
-                            </div>
-                            <div class="stats">
-                              <h4>35</h4>
-                              <p>
-                                Projects
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="footer">
-                          <button class="btn btn-simple"  onclick="rotateCard(this)">
-                            <i class="fa fa-reply"></i> Back
-                        </button>
-                        </div>
-                      </div>
-                    </div> <!-- end front panel -->
-                    <div class="back">
-                      <div class="header">
-                        <h5 class="motto">"To be or not to be, this is my awesome motto!"</h5>
-                      </div>
-                      <div class="content">
-                        <div class="main">
-                          <!-- <div class="loginForm" [formGroup]="loginForm">
-                            <mat-form-field class="example-full-width">
-                              <mat-label>Email</mat-label>
-                              <input matInput type="email" formControlName="email">
-                              
-                              </mat-form-field>
-                            <mat-form-field class="example-full-width">
-                              <mat-label>Password</mat-label>
-                              <input matInput type="password" formControlName="password">
-                            
-                              </mat-form-field>
-                             </div> -->
-          
-                         
-                         
-                        </div>
-                      </div>
-                      <div class="footer justify-content-center">
-                        <button style="
-                        padding-left: 0px;
-                        margin-left: 226px;
-                    " class="btn btn-simple"  onclick="rotateCard(this)">
-                          <i class="fa fa-reply"></i> Back
-                      </button>
-                        <div class="social-links text-center">
-                          <a href="#" class="facebook"><i class="fa fa-facebook fa-fw"></i></a>
-                          <a href="#" class="google"><i class="fa fa-google-plus fa-fw"></i></a>
-                          <a href="#" class="twitter"><i class="fa fa-twitter fa-fw"></i></a>
-                        </div>
-                      </div>
-                    </div>  <!-- end back panel -->
-                  </div> <!-- end card -->
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="tab-pane text-center gallery" id="works">
-            <div class="row">
-              <div class="col-md-6 ml-auto mr-auto">
-                <div class="card-container manual-flip">
-                  <div class="card">
-                    <div class="front">
-                      <div class="cover">
-                      </div>
-                      <div class="content">
-                        <div class="main">
-                          <h3 class="name">User</h3>
-                          <p class="profession">Details</p>
-          
-                          <p class="text-center"></p>
-                          <div class="stats-container">
-                            <div class="stats">
-                              <h4>235</h4>
-                              <p>
-                                Followers
-                              </p>
-                            </div>
-                            <div class="stats">
-                              <h4>114</h4>
-                              <p>
-                                Following
-                              </p>
-                            </div>
-                            <div class="stats">
-                              <h4>35</h4>
-                              <p>
-                                Projects
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="footer">
-                          <button class="btn btn-simple"  onclick="rotateCard(this)">
-                            <i class="fa fa-reply"></i> Back
-                        </button>
-                        </div>
-                      </div>
-                    </div> <!-- end front panel -->
-                    <div class="back">
-                      <div class="header">
-                        <h5 class="motto">"To be or not to be, this is my awesome motto!"</h5>
-                      </div>
-                      <div class="content">
-                        <div class="main">
-                          <!-- <div class="loginForm" [formGroup]="loginForm">
-                            <mat-form-field class="example-full-width">
-                              <mat-label>Email</mat-label>
-                              <input matInput type="email" formControlName="email">
-                              
-                              </mat-form-field>
-                            <mat-form-field class="example-full-width">
-                              <mat-label>Password</mat-label>
-                              <input matInput type="password" formControlName="password">
-                            
-                              </mat-form-field>
-                             </div> -->
-          
-                         
-                         
-                        </div>
-                      </div>
-                      <div class="footer">
-                        <button style="
-                        padding-left: 0px;
-                        margin-left: 226px;
-                    " class="btn btn-simple"  onclick="rotateCard(this)">
-                          <i class="fa fa-reply"></i> Back
-                      </button>
-                        <div class="social-links text-center">
-                          <a href="#" class="facebook"><i class="fa fa-facebook fa-fw"></i></a>
-                          <a href="#" class="google"><i class="fa fa-google-plus fa-fw"></i></a>
-                          <a href="#" class="twitter"><i class="fa fa-twitter fa-fw"></i></a>
-                        </div>
-                      </div>
-                    </div>  <!-- end back panel -->
-                  </div> <!-- end card -->
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="tab-pane text-center gallery" id="favorite">
-            <div class="row text-center">
-              <div class="col-md-6 ml-auto mr-auto">
-                <div class="card-container manual-flip">
-                  <div class="card">
-                    <div class="front">
-                      <div class="cover">
-                       
-                      </div>
-                      <div class="content">
-                        <div class="main">
-                          <h3 class="name">User</h3>
-                          <p class="profession">Details</p>
-          
-                          <p class="text-center"></p>
-                          <div class="stats-container">
-                            <div class="stats">
-                              <h4>235</h4>
-                              <p>
-                                Followers
-                              </p>
-                            </div>
-                            <div class="stats">
-                              <h4>114</h4>
-                              <p>
-                                Following
-                              </p>
-                            </div>
-                            <div class="stats">
-                              <h4>35</h4>
-                              <p>
-                                Projects
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="footer">
-                          <button class="btn btn-simple"  onclick="rotateCard(this)">
-                            <i class="fa fa-reply"></i> Back
-                        </button>
-                        </div>
-                      </div>
-                    </div> <!-- end front panel -->
-                    <div class="back">
-                      <div class="header">
-                        <h5 class="motto">"To be or not to be, this is my awesome motto!"</h5>
-                      </div>
-                      <div class="content">
-                        <div class="main">
-                          <!-- <div class="loginForm" [formGroup]="loginForm">
-                            <mat-form-field class="example-full-width">
-                              <mat-label>Email</mat-label>
-                              <input matInput type="email" formControlName="email">
-                              
-                              </mat-form-field>
-                            <mat-form-field class="example-full-width">
-                              <mat-label>Password</mat-label>
-                              <input matInput type="password" formControlName="password">
-                            
-                              </mat-form-field>
-                             </div> -->
-          
-                         
-                         
-                        </div>
-                      </div>
-                      <div class="footer flex-row-center">
-                        <button style="
-                        padding-left: 0px;
-                        margin-left: 226px;
-                    " class="btn btn-simple" onclick="rotateCard(this)">
-                          <i class="fa fa-reply"></i> Back
-                      </button>
-                        <div class="social-links text-center">
-                          <a href="#" class="facebook"><i class="fa fa-facebook fa-fw"></i></a>
-                          <a href="#" class="google"><i class="fa fa-google-plus fa-fw"></i></a>
-                          <a href="#" class="twitter"><i class="fa fa-twitter fa-fw"></i></a>
-                        </div>
-                      </div>
-                    </div>  <!-- end back panel -->
-                  </div> <!-- end card -->
-                </div>
-              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <mat-accordion class="example-headers-align" multi>
+        <mat-expansion-panel >
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Details
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <div class="container" [formGroup]="basicForm">
+            <div class="row">
+              <div class="col-md-12 basicEdit" >
+                <span class="input-group-text" (click)="editBasic=!editBasic">
+                  <i *ngIf="!editBasic" class="material-icons">edit</i>
+                  <i *ngIf="editBasic" class="material-icons">cancel</i>
+                </span>
+              </div>
+              <div class="col-md-6">
+                <h4><b>Name:</b></h4>
+              </div>
+              <div class="col-md-6" *ngIf="!editBasic" >
+                <h4>{{currentUser?.firstName}} {{currentUser?.lastName}}</h4>
+              </div>
+              <div class="col-md-6" *ngIf="editBasic">
+                <mat-form-field class="example-full-width">
+                  <mat-label>First name</mat-label>
+                  <input matInput formControlName="firstName">
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                  <mat-label>Last name</mat-label>
+                  <input matInput formControlName="lastName">
+                </mat-form-field>
+              </div>
+              <div class="col-md-6">
+                <h4><b>Gender:</b></h4>
+              </div>
+              <div class="col-md-6"*ngIf="!editBasic" >
+                <h4>{{currentUser?.gender}}</h4>
+              </div>
+              <div class="col-md-6"*ngIf="editBasic" >
+                <mat-form-field class="example-full-width">
+                  <mat-label>Gender</mat-label>
+                  <input matInput formControlName="gender">
+                </mat-form-field>
+              </div>
+              <div class="col-md-6">
+                <h4><b>Email:</b></h4>
+              </div>
+              <div class="col-md-6"*ngIf="!editBasic" >
+                <h4>{{currentUser?.email}}</h4>
+              </div>
+              <div class="col-md-6"*ngIf="editBasic">
+                <mat-form-field class="example-full-width">
+                  <mat-label>Email</mat-label>
+                  <input matInput formControlName="email">
+                </mat-form-field>
+              </div>
+               <div class="col-md-6">
+                <h4><b>Phone:</b></h4>
+              </div>
+              <div class="col-md-6"*ngIf="!editBasic" >
+                <h4>{{currentUser?.phone}}</h4>
+              </div>
+              <div class="col-md-6"*ngIf="editBasic">
+                <mat-form-field class="example-full-width">
+                  <mat-label>Phone</mat-label>
+                  <input matInput formControlName="phone">
+                </mat-form-field>
+              </div>
+              <div class="col-md-12 basicEdit"*ngIf="editBasic" >
+                <button type="button" [disabled]="getbasicFormStatus()" class="btn btn-success btn-round" (click)="submitBasic()">
+                  <i class="material-icons">login</i> Submit
+                </button>
+                <button type="button" (click)="reset(1)" class="btn btn-info btn-round" >
+                  <i class="material-icons">replay</i> Reset
+                </button>
+                <button type="button" (click)="cancel(1)"class="btn btn-warning btn-round ">
+                  <i class="material-icons">cancel</i> Cancel
+                </button>
+              </div>
+            </div>
+          </div>
+        </mat-expansion-panel>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Work
+            </mat-panel-title>
+           
+          </mat-expansion-panel-header>
+          <div class="container" [formGroup]="workForm">
+            <div class="row">
+              <div class="col-md-12 basicEdit">
+                <span class="input-group-text"(click)="editWork=!editWork">
+                  <i *ngIf="!editWork" class="material-icons">edit</i>
+                  <i *ngIf="editWork" class="material-icons">cancel</i>
+                </span>
+              </div>
+              <div class="col-md-6">
+                <h4><b>DOB:</b></h4>
+              </div>
+              <div class="col-md-6"*ngIf="!editWork" >
+                <h4>{{currentUser?.dob | date}}</h4>
+              </div>
+              <div class="col-md-6"*ngIf="editWork" >
+                <mat-form-field appearance="fill">
+                  <mat-label>Choose a date</mat-label>
+                  <input matInput [matDatepicker]="picker" formControlName="dob">
+                  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                  <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+              </div>
+              <div class="col-md-6" >
+                <h4><b>City:</b></h4>
+              </div>
+              <div class="col-md-6"*ngIf="!editWork">
+                <h4>{{currentUser?.city}}</h4>
+              </div>
+              <div class="col-md-6"*ngIf="editWork" >
+                <mat-form-field class="example-full-width">
+                  <mat-label>City</mat-label>
+                  <input matInput formControlName="city">
+                </mat-form-field>
+              </div>
+              <div class="col-md-6">
+                <h4><b>State:</b></h4>
+              </div>
+              <div class="col-md-6" *ngIf="!editWork" >
+                <h4>{{currentUser?.state}}</h4>
+              </div>
+              <div class="col-md-6"*ngIf="editWork" >
+                <mat-form-field class="example-full-width">
+                  <mat-label>State</mat-label>
+                  <input matInput formControlName="state">
+                </mat-form-field>
+              </div>
+               <div class="col-md-6">
+                <h4><b>Pin Code:</b></h4>
+              </div>
+              <div class="col-md-6" *ngIf="!editWork" >
+                <h4>{{currentUser?.pincode}}</h4>
+              </div>
+              <div class="col-md-6"*ngIf="editWork" >
+                <mat-form-field class="example-full-width">
+                  <mat-label>Pin Code</mat-label>
+                  <input matInput formControlName="pincode">
+                </mat-form-field>
+              </div>
+              <div class="col-md-6">
+                <h4><b>Address</b></h4>
+              </div>
+              <div class="col-md-6"*ngIf="!editWork" >
+                <mat-form-field class="example-full-width">
+                  <textarea disabled matInput >{{currentUser?.address}}</textarea>
+                </mat-form-field>
+              </div>
+              <div class="col-md-6"*ngIf="editWork" >
+                <mat-form-field class="example-full-width">
+                  <textarea matInput placeholder="Address" formControlName="address"></textarea>
+                </mat-form-field>
+              </div>
+              <div class="col-md-12 basicEdit" *ngIf="editWork" >
+                <button type="button" [disabled]="getworkFormStatus()" class="btn btn-success btn-round" (click)="submitWork()" >
+                  <i class="material-icons">login</i> Submit
+                </button>
+                <button type="button" (click)="reset(2)" class="btn btn-info btn-round" >
+                  <i class="material-icons">replay</i> Reset
+                </button>
+                <button type="button" (click)="cancel(2)"class="btn btn-warning btn-round ">
+                  <i class="material-icons">cancel</i> Cancel
+                </button>
+              </div>
+            </div>
+          </div>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </div>
+    
+  </div>
+
 </div>

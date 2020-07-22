@@ -1,31 +1,6 @@
 <app-preloader></app-preloader>
 <div class="login-page sidebar-collapse">
-  <nav class="navbar navbar-color-on-scroll navbar-transparent fixed-top navbar-expand-lg" color-on-scroll="100">
-    <div class="container">
-      <div class="navbar-translate">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="navbar-toggler-icon"></span>
-          <span class="navbar-toggler-icon"></span>
-          <span class="navbar-toggler-icon"></span>
-        </button>
-      </div>
-      <div class="collapse navbar-collapse">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a routerLink="/"class="nav-link">
-              <i class="material-icons">home</i> Home
-            </a>
-          </li>
-          <li class="nav-item">
-            <a routerLink="/login" class="nav-link">
-              <i class="material-icons">account_box</i> Login
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+  <app-headermain></app-headermain>
   <div class=" header-filter" data-parallax="true" style="background-image: url('assets/img/bg3.jpg')">
     <div class="container">
       <div class="row">
@@ -177,23 +152,6 @@
       </div>
     </div>
   </div>
-  <footer class="footer footer-default">
-    <div class="container">
-      <nav class="float-left">
-        <ul>
-          <li>
-            <a href="#">
-             E-Griviance
-            </a>
-          </li>
-        </ul>
-      </nav>
-      <div class="copyright float-right">
-        &copy;
-        {{year}},
-        #IAm_developer Inc
-      </div>
-    </div>
-  </footer>
+<app-footermain></app-footermain>
 </div>
  

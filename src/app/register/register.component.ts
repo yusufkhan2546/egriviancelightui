@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-register',
@@ -11,7 +12,8 @@ export class RegisterComponent implements OnInit {
 year = new Date().getFullYear();
 userForm:FormGroup;
   constructor(private fb:FormBuilder,
-               private toastr:ToastrService) { }
+               private toastr:ToastrService,
+               private user:UserService) { }
 
   ngOnInit(): void {
     this.userForm = this.fb.group({
@@ -34,6 +36,7 @@ userForm:FormGroup;
     
       if(this.userForm.get('password').value === this.userForm.get('confirmpassword').value){
         console.log(this.userForm.value);
+        this.user.register(this.userForm.value);
       }else {
         this.toastr.info('Passwords are not Matching ')
       }
