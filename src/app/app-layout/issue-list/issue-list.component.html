@@ -96,6 +96,11 @@
                     update
                   </span>
                 </a>
+                <a title="mail" class="update" data-toggle="modal" (click)="mail(element)" data-target="#UpdateIssueMailModel">
+                  <span class="material-icons">
+                    mail
+                  </span>
+                </a>
               </td>
             </ng-container>
             <ng-container matColumnDef="Name">
@@ -128,6 +133,24 @@
 
           <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
         </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="UpdateIssueMailModel" tabindex="-1" role="dialog" *ngIf="showModal">
+  <div class="modal-dialog " role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Send Email</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <i class="material-icons">clear</i>
+        </button>
+      </div>
+      <div class="modal-body">
+      <app-dailog [mailData]="IssueforMail" [Issue]="Issue" *ngIf="showModal" (onClose)="modalClosed($event)"></app-dailog>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger btn-link" data-dismiss="modal" (click)="modalClosed()">Close</button>
       </div>
     </div>
   </div>

@@ -24,6 +24,10 @@ import { IssueState } from './states/issue.state';
 import {NgxSpinnersModule} from 'ngx-spinners';
 import { HeadermainComponent } from './headermain/headermain.component';
 import { FootermainComponent } from './footermain/footermain.component';
+import { NumbersOnlyDirective } from './directives/numbers-only.directive';
+import { TextOnlyDirective } from './directives/text-only.directive';
+import {MatBadgeModule} from '@angular/material/badge';
+
 declare var $:any;
 @NgModule({
   declarations: [
@@ -33,7 +37,9 @@ declare var $:any;
     LoginComponent,
     ForgotPasswordComponent,
     HeadermainComponent,
-    FootermainComponent
+    FootermainComponent,
+    NumbersOnlyDirective,
+    TextOnlyDirective
   ],
   imports: [
    
@@ -52,8 +58,10 @@ declare var $:any;
     MatDatepickerModule,
     MatNativeDateModule,
     MatInputModule,
-    NgxSpinnersModule 
-    
+    NgxSpinnersModule,
+    MatBadgeModule,
+  
+   
   ],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
                { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },],

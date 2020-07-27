@@ -16,8 +16,10 @@ export class UserComponent implements OnInit {
   currentUser: User
   editBasic: Boolean = false;
   editWork: Boolean = false;
+  editSmtp: Boolean = false;
   basicForm: FormGroup;
   workForm: FormGroup;
+  smtpForm:FormGroup
   constructor(private user: UserService,
     private fb: FormBuilder,
      private toastr:ToastrService,
@@ -40,8 +42,17 @@ export class UserComponent implements OnInit {
       pincode: ['', Validators.required],
       address: ['', Validators.required]
     });
+    this.smtpForm = this.fb.group({
+      smtpServer: ['', Validators.required],
+      smtpUsername: ['', Validators.required],
+      smtpPassword: ['', Validators.required],
+      smtpPort: ['', Validators.required],
+      tlsssl: ['', Validators.required]
+    });
+
 this.mapBasicForm(this.basicForm,this.currentUser);
 this.mapworkForm(this.workForm,this.currentUser);
+this.mapsmtpForm(this.smtpForm,this.currentUser)
   }
   reset(number) {
      switch(number){
@@ -49,7 +60,7 @@ this.mapworkForm(this.workForm,this.currentUser);
                this.mapBasicForm(this.basicForm,this.currentUser);
                  break;
        case 2: this.workForm.reset(); this.mapworkForm(this.workForm,this.currentUser); break;
-                     
+       case 3: this.smtpForm.reset(); this.mapsmtpForm(this.smtpForm,this.currentUser); break;             
      }        
   }
   cancel(number) {
@@ -57,6 +68,7 @@ this.mapworkForm(this.workForm,this.currentUser);
    switch(number){
        case 1:  this.editBasic = false; break;
        case 2: this.editWork = false; break;
+       case 3:  this.editSmtp =false;break;
    }
   }
   mapBasicForm(Form:FormGroup,user:User){
@@ -65,6 +77,13 @@ this.mapworkForm(this.workForm,this.currentUser);
      Form.get('email').setValue(this.currentUser.email);
      Form.get('phone').setValue(this.currentUser.phone);
      Form.get('gender').setValue(this.currentUser.gender);
+  }
+  mapsmtpForm(Form:FormGroup,user:User){
+    Form.get('smtpServer').setValue(this.currentUser.smtpServer);
+    Form.get('smtpUsername').setValue(this.currentUser.smtpUsername);
+    Form.get('smtpPassword').setValue(this.currentUser.smtpPassword);
+    Form.get('smtpPort').setValue(this.currentUser.smtpPort);
+    Form.get('tlsssl').setValue(this.currentUser.tlsssl);
   }
   mapworkForm(Form:FormGroup,user:User){
     Form.get('dob').setValue(this.currentUser.dob);
@@ -78,6 +97,9 @@ this.mapworkForm(this.workForm,this.currentUser);
   }
   getworkFormStatus(){
     return this.workForm.untouched || this.workForm.invalid;
+  }
+  getsmtpFormStatus(){
+    return this.smtpForm.untouched || this.smtpForm.invalid;
   }
  submitBasic(){
  if(this.basicForm.valid){
@@ -96,6 +118,22 @@ this.mapworkForm(this.workForm,this.currentUser);
     this.toastr.error('Invalid Data');
   }
   
+ }
+ submitSmtp(){
+  if(this.workForm.valid){
+    let payload:any[] = [];
+    payload.push(new Assign('smtpServer',this.smtpForm.get('smtpServer').value));
+    payload.push(new Assign('smtpUsername',this.smtpForm.get('smtpUsername').value));
+    payload.push(new Assign('smtpPassword',this.smtpForm.get('smtpPassword').value));
+    payload.push(new Assign('smtpPort',this.smtpForm.get('smtpPort').value));
+    payload.push(new Assign('tlsssl',this.smtpForm.get('tlsssl').value));
+    this.user.updateUser(payload,this.currentUser._id);
+    setTimeout(() => {
+      this.auth.logout();
+    }, 500);
+   } else {
+     this.toastr.error('Invalid Data');
+   }
  }
  submitWork(){
    if(this.workForm.valid){

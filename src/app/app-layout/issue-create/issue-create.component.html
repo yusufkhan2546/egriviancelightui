@@ -23,7 +23,7 @@
                     <i class="material-icons">account_circle</i>
                   </span>
                 </div>
-                <input type="text" formControlName="name" class="form-control registrationInput"
+                <input textonly maxlength="50" type="text" formControlName="name" class="form-control registrationInput"
                   placeholder="Full Name">
               </div>
               <div class="input-group">
@@ -32,7 +32,7 @@
                     <i class="material-icons">apartment</i>
                   </span>
                 </div>
-                <input type="text" formControlName="place" class="form-control registrationInput" placeholder="place">
+                <input textonly maxlength="50" type="text" formControlName="place" class="form-control registrationInput" placeholder="place">
               </div>
               <div class="input-group">
                 <div class="input-group-prepend">
@@ -40,7 +40,7 @@
                     <i class="material-icons">location_city</i>
                   </span>
                 </div>
-                <input type="text" formControlName="city" class="form-control registrationInput" placeholder="City">
+                <input textonly maxlength="50" type="text" formControlName="city" class="form-control registrationInput" placeholder="City">
               </div>
               <div class="input-group">
                 <div class="input-group-prepend">
@@ -57,7 +57,7 @@
                     <i class="material-icons">room</i>
                   </span>
                 </div>
-                <input type="text" formControlName="pincode" class="form-control registrationInput"
+                <input type="text" numbersonly maxlength="6" minlength="6" formControlName="pincode" class="form-control registrationInput"
                   placeholder="Pin Code">
               </div>
               <div class="input-group">
@@ -66,7 +66,7 @@
                     <i class="material-icons">email</i>
                   </span>
                 </div>
-                <input type="email" formControlName="email" class="form-control registrationInput" placeholder="mail">
+                <input type="email" maxlength="50" formControlName="email" class="form-control registrationInput" placeholder="mail">
               </div>
             </div>
             <div class="col-md-6">
@@ -89,7 +89,7 @@
                     <i class="material-icons">emoji_transportation</i>
                   </span>
                 </div>
-                <input type="text" formControlName="state" class="form-control registrationInput" placeholder="state">
+                <input type="text" textonly maxlength="50" formControlName="state" class="form-control registrationInput" placeholder="state">
               </div>
               <div class="input-group">
                 <div class="input-group-prepend">
@@ -97,7 +97,7 @@
                     <i class="material-icons">add_ic_call</i>
                   </span>
                 </div>
-                <input type="text" formControlName="phone" class="form-control registrationInput" placeholder="Phone">
+                <input type="text" numbersonly maxlength="10" minlength="10"formControlName="phone" class="form-control registrationInput" placeholder="Phone">
               </div>
               <div class="input-group">
                 <div class="input-group-prepend">

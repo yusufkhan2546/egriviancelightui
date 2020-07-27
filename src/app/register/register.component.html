@@ -1,4 +1,4 @@
-<app-preloader></app-preloader>
+
 <div class="login-page sidebar-collapse">
   <app-headermain></app-headermain>
   <div class=" header-filter" data-parallax="true" style="background-image: url('assets/img/bg3.jpg')">
@@ -23,7 +23,7 @@
                         <i class="material-icons">account_circle</i>
                       </span>
                     </div>
-                    <input type="text" formControlName="firstName" class="form-control registrationInput" placeholder="First Name">
+                    <input TextOnly maxlength="25" type="text" formControlName="firstName" class="form-control registrationInput" placeholder="First Name">
                   </div>
                   <div class="input-group">
                     <div class="input-group-prepend">
@@ -45,7 +45,7 @@
                         <i class="material-icons">attach_email</i>
                       </span>
                     </div>
-                    <input type="email"  formControlName="email" class="form-control registrationInput" placeholder="Email...">
+                    <input maxlength="40" type="email"  formControlName="email" class="form-control registrationInput" placeholder="Email...">
                   </div>
                   <div class="input-group">
                     <div class="input-group-prepend">
@@ -53,7 +53,7 @@
                         <i class="material-icons">location_city</i>
                       </span>
                     </div>
-                    <input type="text" formControlName="city" class="form-control registrationInput" placeholder="City">
+                    <input TextOnly maxlength="30" type="text" formControlName="city" class="form-control registrationInput" placeholder="City">
                   </div>
                   <div class="input-group">
                     <div class="input-group-prepend">
@@ -61,7 +61,7 @@
                         <i class="material-icons">contact_mail</i>
                       </span>
                     </div>
-                    <textarea type="text"formControlName="address" class="form-control registrationInput" placeholder="Address..."></textarea>
+                    <textarea  type="text"formControlName="address" class="form-control registrationInput" placeholder="Address..."></textarea>
                   </div>
                 
                   <div class="input-group">
@@ -80,15 +80,16 @@
                         <i class="material-icons">account_circle</i>
                       </span>
                     </div>
-                    <input type="text"formControlName="lastName" class="form-control registrationInput" placeholder="Last Name">
+                    <input TextOnly maxlength="25" type="text"formControlName="lastName" class="form-control registrationInput" placeholder="Last Name">
                   </div>
                    <div class="input-group">
                     <div class="input-group-prepend">
-                      <span class="input-group-text">
-                        <i class="material-icons">add_ic_call</i>
+                     
+                      <span class="input-group-text" >
+                        <i class="material-icons" >add_ic_call</i>
                       </span>
                     </div>
-                    <input type="text" formControlName="phone" class="form-control registrationInput" placeholder="Phone">
+                       <input NumbersOnly maxlength="12" minlength="10" type="text" formControlName="phone" class="form-control registrationInput" placeholder="Phone">
                   </div>
                   <div class="input-group">
                     <div class="input-group-prepend">
@@ -96,7 +97,7 @@
                         <i class="material-icons">location_city</i>
                       </span>
                     </div>
-                    <input type="text" formControlName="state" class="form-control registrationInput" placeholder="State">
+                    <input TextOnly type="text" maxlength="30" formControlName="state" class="form-control registrationInput" placeholder="State">
                   </div>
                   <div class="input-group">
                     <div class="input-group-prepend">
@@ -121,7 +122,7 @@
                         <i class="material-icons">room</i>
                       </span>
                     </div>
-                    <input type="text" formControlName="pincode" class="form-control registrationInput" placeholder="Pin Code">
+                    <input NumbersOnly  maxlength="6" minlength="6" type="text" formControlName="pincode" class="form-control registrationInput" placeholder="Pin Code">
                   </div>
                   <div class="input-group">
                     <div class="input-group-prepend">
@@ -142,7 +143,10 @@
                   <button type="button" (click)="reset()" class="btn btn-info btn-round registrationInput">
                     <i class="material-icons">replay</i> Reset
                   </button>
-                  <button type="button" (click)="cancel()"class="btn btn-warning btn-round registrationInput">
+                  <button type="button" *ngIf="userForm.untouched" (click)="cancel()"class="btn btn-info btn-round registrationInput">
+                    <i class="material-icons">cancel</i> Cancel
+                  </button>
+                  <button type="button"  *ngIf="userForm.touched" data-toggle="modal" data-target="#WarningModel" class="btn btn-warning btn-round registrationInput">
                     <i class="material-icons">cancel</i> Cancel
                   </button>
               </div>
@@ -152,6 +156,27 @@
       </div>
     </div>
   </div>
+  
 <app-footermain></app-footermain>
 </div>
+<div class="modal fade" id="WarningModel"  role="dialog">
+  <div class="modal-dialog " role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Alert</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <i class="material-icons">clear</i>
+        </button>
+      </div>
+      <div class="modal-body">
+     <p>Your Data Will Be lost</p>
+     <button class="btn btn-primary" routerLink="/" data-dismiss="modal">Confirm</button>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger btn-link" data-dismiss="modal" >Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
  

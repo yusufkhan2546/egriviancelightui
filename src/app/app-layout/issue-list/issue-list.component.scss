@@ -24,3 +24,11 @@ mat-paginator{
     background: rgb(242,239,233);
     background: linear-gradient(45deg, rgba(242,239,233,1) 21%, rgba(7,177,242,1) 83%);
 }
+.modal-dialog, .modal-content,.modal-body,.modal-header,.modal-footer{
+   width:100vh;
+ }
+ @media screen and(max-width:375px){
+   .modal-dialog, .modal-content,.modal-body,.modal-header,.modal-footer{
+     width: 340px;
+  } 
+ }

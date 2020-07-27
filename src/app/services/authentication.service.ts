@@ -48,10 +48,15 @@ export class AuthenticationService {
         }  
         ));
 }   
-    logout() {
+    logout(direct?:Boolean) {
         // remove user from local storage to log user out
         localStorage.removeItem('currentUser');
         this.currentUserSubject.next(null);
-        this.router.navigate([`/`]);
+        if(direct){
+            this.router.navigate([`/forgot`]);   
+        } else{
+            this.router.navigate([`/`]);
+        }
+     
     }
 }

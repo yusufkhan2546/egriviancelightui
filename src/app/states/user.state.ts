@@ -1,6 +1,6 @@
 import { StateContext, State, Action, Store } from '@ngxs/store';
 import { Injectable, NgZone } from '@angular/core';
-import { UserRegister, GetUsers, GetUserById, UpdateUser } from '../actions/user.action';
+import { UserRegister, GetUsers, GetUserById, UpdateUser, SendUpdate, Mail, UserReset } from '../actions/user.action';
 import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { ToastrService } from 'ngx-toastr';
 import { environment } from '../../environments/environment';
@@ -35,13 +35,18 @@ export interface UserStateModel {
 this.apiUrl = environment.apiUrl;
       }
     @Action(UserRegister)
-    public createUser(context:StateContext<UserStateModel>,{User}:UserRegister){
+    public createUser(context:StateContext<UserStateModel>,{User,mail}:UserRegister){
        this.progress.show();
        return  this.http.post(`${this.apiUrl}/users/signup`,User,{headers}).pipe().subscribe(res=>{
             if(res){
+               this.store.dispatch(new Mail(mail));
                 this.toastr.success('User Created Successfullyy');
                 this.router.navigate([`/user`]);
                 this.progress.hide();
+            }
+            else {
+              this.toastr.success('Contact Service Provider'); 
+              this.progress.hide();
             }
             return res;
         });
@@ -88,4 +93,45 @@ public updateUser(context:StateContext<UserStateModel>,{payload, userid }:Update
     });
 
 }
+@Action(SendUpdate)
+public sendMail(context:StateContext<UserStateModel>,{id,content}:SendUpdate){
+  this.progress.show();
+  return this.http.post(`${this.apiUrl}/users/${id}/sendmail`,content,{headers}).pipe().subscribe(res=>{
+        if(res){
+             this.toastr.info('Mail Sent SuccessFully');
+             this.progress.hide();
+          } 
+        return res;
+    });
+
+}
+@Action(Mail)
+Email(context:StateContext<UserStateModel>,{content}:Mail){
+  this.progress.show();
+  return this.http.post(`${this.apiUrl}/users/registermail`,content,{headers}).pipe().subscribe(res=>{
+    if(res){
+         this.progress.hide();
+      } 
+    return res;
+});
+}
+@Action(UserReset)
+    public reset(context:StateContext<UserStateModel>,{ email,mail}:UserReset){
+     
+       this.progress.show();
+       return  this.http.post(`${this.apiUrl}/users/resetpassword`,{email,mail},{headers}).pipe().subscribe(res=>{
+            if(res){
+                this.toastr.success('Request Sent Successfully');
+                this.router.navigate([`/`]);
+                this.progress.hide();
+            }
+            else {
+              this.toastr.success('Contact Service Provider'); 
+              this.progress.hide();
+            }
+            return res;
+        });
+
+    }
+ 
   }

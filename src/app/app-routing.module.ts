@@ -12,7 +12,8 @@ const routes: Routes = [
  ]},
  { path:'user',  loadChildren:'./app-layout/app-layout.module#AppLayoutModule',canActivate:[AuthGuard]},
  { path:'login',component:LoginComponent },
- { path:'register',component:RegisterComponent },
+ { path:'adminregister',component:RegisterComponent },
+ { path:'userregister',component:RegisterComponent },
  { path:'forgot',component:ForgotPasswordComponent}
 ];
 

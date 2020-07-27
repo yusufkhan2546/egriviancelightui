@@ -25,9 +25,13 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import {NgxSpinnersModule} from 'ngx-spinners';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
+import { NumbersonlyDirective } from './numbersonly.directive';
+import { TextonlyDirective } from './textonly.directive';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import { AngularEditorModule } from '@kolkov/angular-editor';
 
 @NgModule({
-  declarations: [LayoutComponent, DashboardComponent, UserComponent, HeaderComponent, MenuComponent, FooterComponent, IssueCreateComponent, IssueListComponent, IssueUpdateComponent, DailogComponent, ToasterComponent],
+  declarations: [LayoutComponent, DashboardComponent, UserComponent, HeaderComponent, MenuComponent, FooterComponent, IssueCreateComponent, IssueListComponent, IssueUpdateComponent, DailogComponent, ToasterComponent, NumbersonlyDirective, TextonlyDirective],
   imports: [
     CommonModule,
     AppLayoutRoutingModule,
@@ -43,7 +47,10 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
     MatDatepickerModule,
     MatNativeDateModule,
     NgxSpinnersModule, 
-    MatProgressBarModule
+    MatProgressBarModule,
+    MatSlideToggleModule,
+    AngularEditorModule
+  
   ]
 })
 export class AppLayoutModule { }

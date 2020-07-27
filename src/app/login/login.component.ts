@@ -8,6 +8,7 @@ import { first } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment';
 import { ProgressService } from '../services/progress.service';
+import { MailService } from '../services/mail.service';
 
 @Component({
   selector: 'app-login',
@@ -30,6 +31,7 @@ export class LoginComponent implements OnInit {
                 private router:Router,
                 private http:HttpClient,
                 private progress:ProgressService,
+                private mail:MailService,
            
                ) { this.apiUrl = environment.apiUrl }
 
@@ -74,6 +76,7 @@ export class LoginComponent implements OnInit {
                 this.router.navigate([`/user`]);
                 this.progress.hide();
                 this.toastr.success('Login Success');
+         
               
           
             },

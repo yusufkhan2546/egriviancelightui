@@ -37,6 +37,11 @@
                     <i class="material-icons">palette</i> Work
                   </a>
                 </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#works" role="tab" data-toggle="tab">
+                    <i class="material-icons">mail</i> Mail
+                  </a>
+                </li>
               </ul>
             </div>
           </div>
@@ -72,11 +77,11 @@
               <div class="col-md-6" *ngIf="editBasic">
                 <mat-form-field class="example-full-width">
                   <mat-label>First name</mat-label>
-                  <input matInput formControlName="firstName">
+                  <input matInput textonly maxlength="50" formControlName="firstName">
                 </mat-form-field>
                 <mat-form-field class="example-full-width">
                   <mat-label>Last name</mat-label>
-                  <input matInput formControlName="lastName">
+                  <input matInput textonly maxlength="50" formControlName="lastName">
                 </mat-form-field>
               </div>
               <div class="col-md-6">
@@ -86,9 +91,24 @@
                 <h4>{{currentUser?.gender}}</h4>
               </div>
               <div class="col-md-6"*ngIf="editBasic" >
-                <mat-form-field class="example-full-width">
+                <!-- <mat-form-field class="example-full-width">
                   <mat-label>Gender</mat-label>
                   <input matInput formControlName="gender">
+                </mat-form-field> -->
+                <mat-form-field >
+               
+                  <mat-label>Gender</mat-label>
+                  <mat-select name="Gender" formControlName="gender">
+                    <mat-option value='Male'>
+                      Male
+                 </mat-option>
+                 <mat-option value='Female'>
+                   Female
+                  </mat-option>
+                  <mat-option value='Others'>
+                    Others
+                   </mat-option>
+                  </mat-select>
                 </mat-form-field>
               </div>
               <div class="col-md-6">
@@ -100,7 +120,7 @@
               <div class="col-md-6"*ngIf="editBasic">
                 <mat-form-field class="example-full-width">
                   <mat-label>Email</mat-label>
-                  <input matInput formControlName="email">
+                  <input matInput  maxlength="50" formControlName="email">
                 </mat-form-field>
               </div>
                <div class="col-md-6">
@@ -112,7 +132,7 @@
               <div class="col-md-6"*ngIf="editBasic">
                 <mat-form-field class="example-full-width">
                   <mat-label>Phone</mat-label>
-                  <input matInput formControlName="phone">
+                  <input matInput numbersonly maxlength="10" minlength="10" formControlName="phone">
                 </mat-form-field>
               </div>
               <div class="col-md-12 basicEdit"*ngIf="editBasic" >
@@ -167,7 +187,7 @@
               <div class="col-md-6"*ngIf="editWork" >
                 <mat-form-field class="example-full-width">
                   <mat-label>City</mat-label>
-                  <input matInput formControlName="city">
+                  <input matInput textonly maxlength="50" formControlName="city">
                 </mat-form-field>
               </div>
               <div class="col-md-6">
@@ -179,7 +199,7 @@
               <div class="col-md-6"*ngIf="editWork" >
                 <mat-form-field class="example-full-width">
                   <mat-label>State</mat-label>
-                  <input matInput formControlName="state">
+                  <input matInput textonly maxlength="50" formControlName="state">
                 </mat-form-field>
               </div>
                <div class="col-md-6">
@@ -191,7 +211,7 @@
               <div class="col-md-6"*ngIf="editWork" >
                 <mat-form-field class="example-full-width">
                   <mat-label>Pin Code</mat-label>
-                  <input matInput formControlName="pincode">
+                  <input matInput numbersonly maxlength="6" minlength="6" formControlName="pincode">
                 </mat-form-field>
               </div>
               <div class="col-md-6">
@@ -215,6 +235,95 @@
                   <i class="material-icons">replay</i> Reset
                 </button>
                 <button type="button" (click)="cancel(2)"class="btn btn-warning btn-round ">
+                  <i class="material-icons">cancel</i> Cancel
+                </button>
+              </div>
+            </div>
+          </div>
+        </mat-expansion-panel>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Mail SMTP
+            </mat-panel-title>
+           
+          </mat-expansion-panel-header>
+          <div class="container" [formGroup]="smtpForm">
+            <div class="row">
+              <div class="col-md-12 basicEdit">
+                <span class="input-group-text"(click)="editSmtp=!editSmtp">
+                  <i *ngIf="!editSmtp" class="material-icons">edit</i>
+                  <i *ngIf="editSmtp" class="material-icons">cancel</i>
+                </span>
+              </div>
+              <div class="col-md-6">
+                <h4><b>Server</b></h4>
+              </div>
+              <div class="col-md-6"*ngIf="!editSmtp" >
+                <h4>{{currentUser?.smtpServer?currentUser.smtpServer:'N?A'}}</h4>
+              </div>
+              <div class="col-md-6"*ngIf="editSmtp" >
+                <mat-form-field appearance="fill">
+                  <mat-label>Server Address</mat-label>
+                  <input matInput maxlength="30" formControlName="smtpServer">
+                
+                </mat-form-field>
+              </div>
+              <div class="col-md-6" >
+                <h4><b>UserName</b></h4>
+              </div>
+              <div class="col-md-6"*ngIf="!editSmtp">
+                <h4>{{currentUser?.smtpUsername?currentUser.smtpUsername:'N?A'}}</h4>
+              </div>
+              <div class="col-md-6"*ngIf="editSmtp" >
+                <mat-form-field class="example-full-width">
+                  <mat-label>UserName</mat-label>
+                  <input matInput  maxlength="30" formControlName="smtpUsername">
+                </mat-form-field>
+              </div>
+              <div class="col-md-6">
+                <h4><b>Password</b></h4>
+              </div>
+              <div class="col-md-6" *ngIf="!editSmtp" >
+                <h4>{{currentUser?.smtpPassword?currentUser.smtpPassword:'N?A'}}</h4>
+              </div>
+              <div class="col-md-6"*ngIf="editSmtp" >
+                <mat-form-field class="example-full-width">
+                  <mat-label>Password</mat-label>
+                  <input matInput type="password" maxlength="50" formControlName="smtpPassword">
+                </mat-form-field>
+              </div>
+               <div class="col-md-6">
+                <h4><b>Port</b></h4>
+              </div>
+              <div class="col-md-6" *ngIf="!editSmtp" >
+                <h4>{{currentUser?.smtpPort?currentUser.smtpPort:'N?A'}}</h4>
+              </div>
+              <div class="col-md-6"*ngIf="editSmtp" >
+                <mat-form-field class="example-full-width">
+                  <mat-label>Port</mat-label>
+                  <input matInput type="number"numbersonly maxlength="4" minlength="3" formControlName="smtpPort">
+                </mat-form-field>
+              </div>
+              <div class="col-md-6">
+                <h4><b>TLS/SSL</b></h4>
+              </div>
+              <div class="col-md-6"*ngIf="!editSmtp" >
+                
+                 <h4>{{currentUser?.tlsssl?'Required':'Not Required'}}</h4>
+            
+              </div>
+              <div class="col-md-6"*ngIf="editSmtp" >
+                <mat-slide-toggle formControlName="tlsssl">Required</mat-slide-toggle>
+              </div>
+              <div class="col-md-12 basicEdit" *ngIf="editSmtp" >
+                <button type="button" [disabled]="getsmtpFormStatus()" class="btn btn-success btn-round" (click)="submitSmtp()" >
+                  <i class="material-icons">login</i> Submit
+                </button>
+                <button type="button" (click)="reset(3)" class="btn btn-info btn-round" >
+                  <i class="material-icons">replay</i> Reset
+                </button>
+                <button type="button" (click)="cancel(3)"class="btn btn-warning btn-round ">
                   <i class="material-icons">cancel</i> Cancel
                 </button>
               </div>

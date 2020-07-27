@@ -10,11 +10,16 @@ import { ProgressService } from 'src/app/services/progress.service';
 })
 export class HeaderComponent implements OnInit {
   constructor(private auth:AuthenticationService,
-               private progress:ProgressService) { }
+               private progress:ProgressService,
+               private router:Router) { }
 
   ngOnInit(): void {
   }
   logout(){
      this.auth.logout();
+  }
+  changePassword(){
+   this.auth.logout(true);
+ 
   }
 }

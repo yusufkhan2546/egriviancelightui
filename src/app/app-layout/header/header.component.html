@@ -48,7 +48,7 @@
               <a routerLink="/user/profile" class="dropdown-item">
                 <i class="material-icons">portrait</i>Profile
               </a>
-              <a routerLink="/forgot"  class="dropdown-item">
+              <a  (click)="changePassword()"  class="dropdown-item">
                 <i class="material-icons">vpn_key</i>Change Password
               </a>
                <a (click)="logout()"  class="dropdown-item">
